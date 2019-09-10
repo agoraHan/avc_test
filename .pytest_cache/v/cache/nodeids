@@ -1,0 +1,4 @@
+[
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname",
+  "testcase/ios/test_function.py::TestIOS::()::test_updateAvatar"
+]
