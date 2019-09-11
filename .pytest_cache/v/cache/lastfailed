@@ -1,1 +1,24 @@
-{}
+{
+  "testcase/ios/test_function.py::TestIOS::()": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_01": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_getAppVersion": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_roomName_01[12]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_roomName_01[AB]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_roomName_01[abcd]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_roomName_02[1234567890123456789]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_roomName_02[QWERTYUIOPASDFGHJKL]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_roomName_02[ZXCVBNM<>?!@#$%^&*(]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_updateAvatar": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[1234567890]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[1]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[KLZXCVVBNM]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[Q WERTYUIOPASDFGHJ]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[QWERTYUIOPASDFGHJK]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[l;'zxcvbn,./]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[l;'zxcvbnm,./]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[l;'zxv c bnm,./]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[qwertyuiopasdfghjk]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[~!@#$%^&*())_+]": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_02": true
+}
