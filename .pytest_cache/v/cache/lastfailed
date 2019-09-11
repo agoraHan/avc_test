@@ -1,6 +1,7 @@
 {
   "testcase/ios/test_function.py::TestIOS::()::test_01": true,
   "testcase/ios/test_function.py::TestIOS::()::test_getAppVersion": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_joinLeaveChannel": true,
   "testcase/ios/test_function.py::TestIOS::()::test_password[,./!@#$%^&*()-+]": true,
   "testcase/ios/test_function.py::TestIOS::()::test_password[1234567890123456789]": true,
   "testcase/ios/test_function.py::TestIOS::()::test_password[1ACV21-_]": true,

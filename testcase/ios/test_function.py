@@ -41,6 +41,7 @@ class TestIOS:
         avc = self.avc
         avc.setCurrentDevice(0)
         avc.startAVC(self.packageName)
+        avc.goMine()
         avc.updateNickname()
         path1 = "resource/screenshot/test_updateNickname_01a.jpg"
         path2 = "resource/screenshot/test_updateNickname_01b.jpg"
@@ -61,6 +62,7 @@ class TestIOS:
         avc = self.avc
         avc.setCurrentDevice(0)
         avc.startAVC(self.packageName)
+        avc.goMine()
         avc.updateNickname()
         path1 = "resource/screenshot/test_updateNickname_02a.jpg"
         path2 = "resource/screenshot/test_updateNickname_02b.jpg"
@@ -80,7 +82,7 @@ class TestIOS:
         avc = self.avc
         avc.setCurrentDevice(0)
         avc.startAVC(self.packageName)
-        poco("mine").click()
+        avc.goMine()
         path1 = "resource/screenshot/test_updateAvatar_a.jpg"
         path2 = "resource/screenshot/test_updateAvatar_b.jpg"
         avc.getScreenshot(filename=path1)
@@ -160,3 +162,9 @@ class TestIOS:
         sleep(2)
         avc.leaveChannel()
 
+    @pytest.mark.parametrize("msg", [ "1234567890123456789"])
+    def test_uploadLog(self,msg):
+        avc = self.avc
+        avc.setCurrentDevice(0)
+        avc.sendMessage()
+        text(msg)

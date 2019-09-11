@@ -15,8 +15,10 @@ class IOS_AVC(Common_AVC):
     def __init__(self):
         self.interval =2
 
-    def updateNickname(self):
+    def goMine(self):
         poco("mine").click()
+
+    def updateNickname(self):
         btn_nickName = poco("Window").child("Other").child("Other").child("Other").child("Other").child("Other")[1].child("Button")[1]
         btn_nickName.click()
         poco("TextField").click()
@@ -49,16 +51,77 @@ class IOS_AVC(Common_AVC):
         wait(Template(r"resource/images/tpl1568100069708.png", record_pos=(0.003, -0.54), resolution=(750, 1334)),5)
 
     def muteVideoInchannel(self):
-        poco("video on").click()
+        if poco("video off").exists():
+            print("video already mute")
+        else:
+            poco("video on").click()
 
     def unmuteVideoInchannel(self):
-        poco("video off").click()
+        if poco("video om").exists():
+            print("video already unmute")
+        else:
+            poco("video off").click()
 
     def muteAudioInchannel(self):
-        poco("audio on").click()
+        if  poco("audio off").exists():
+            print("audio already mute")
+        else:
+            poco("audio on").click()
 
     def unmuteAudioInchannel(self):
-        poco("audio off").click()
+        if poco("audio on").exists():
+            print("audio already unmute")
+        else:
+            poco("audio off").click()
+
+    def setVideoResolution(self,resolution):
+        '''
+        :param resotion: 0:360P(默认, 1:240P, 2:480P
+        '''
+
+        if resolution == 0:
+            poco("360P").click()
+        elif resolution == 1:
+            poco("240P").click()
+        elif resolution == 2:
+            poco("480P").click()
+        else:
+            raise ValueError("[Fail] Resolution is not supported : %s" % resolution)
+
+    def preMuteVideo(self):
+        if poco("video off").exists():
+           print("video already mute")
+        else:
+            poco("video join").click()
+
+    def preUnmuteVideo(self):
+        if poco("video join").exists():
+           print("video already unmute")
+        else:
+            poco("video off").click()
+
+    def preMuteAudio(self):
+        if poco("audio off").exists():
+            print("audio already muted")
+        else:
+            poco("audio join").exists()
+
+    def preUnmuteAudio(self):
+        if poco("audio join").exists():
+            print("audio already unmute")
+        else:
+            poco("audio off").click()
+
+    def sendMessage(self):
+        poco("message").click()
+        poco("TextField").click()
 
 
+    def uploadLog(self):
+        '''
+            网络不好，上传时间会变长，可能会失败
+        '''
+        poco("上传日志").click()
+        wait(Template(r"resource/images/tpl1568205469989.png", record_pos=(0.003, -0.489), resolution=(750, 1334)))
+        print("Upload Success")
 

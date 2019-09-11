@@ -22,5 +22,6 @@
   "testcase/ios/test_function.py::TestIOS::()::test_password[ZXCVBNM]",
   "testcase/ios/test_function.py::TestIOS::()::test_password[1234567890123456789]",
   "testcase/ios/test_function.py::TestIOS::()::test_password[,./!@#$%^&*()-+]",
-  "testcase/ios/test_function.py::TestIOS::()::test_joinLeaveChannel"
+  "testcase/ios/test_function.py::TestIOS::()::test_joinLeaveChannel",
+  "testcase/ios/test_function.py::TestIOS::()::test_uploadLog[1234567890123456789]"
 ]
