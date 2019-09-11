@@ -11,8 +11,11 @@ class TestIOS:
         self.avc = IOS_AVC()
         self.channel_name = "AVCAUTO"
         self.password = "avctest"
+        self.packageName = "io.agora.videocall"
+
     def tearDown(self):
         pass
+
     '''
     获取版本号
     '''
@@ -20,7 +23,7 @@ class TestIOS:
     def test_getAppVersion(self):
         avc = self.avc
         avc.setCurrentDevice(0)
-        avc.startAVC()
+        avc.startAVC(self.packageName)
         path1 = "resource/screenshot/getAppVersion_a.jpg"
         path2 = "resource/screenshot/getAppVersion_b.jpg"
         avc.getScreenshot(path1)
@@ -37,7 +40,7 @@ class TestIOS:
     def test_updateNickname_01(self,nickname):
         avc = self.avc
         avc.setCurrentDevice(0)
-        avc.startAVC()
+        avc.startAVC(self.packageName)
         avc.updateNickname()
         path1 = "resource/screenshot/test_updateNickname_01a.jpg"
         path2 = "resource/screenshot/test_updateNickname_01b.jpg"
@@ -57,7 +60,7 @@ class TestIOS:
     def test_updateNickname_02(self):
         avc = self.avc
         avc.setCurrentDevice(0)
-        avc.startAVC()
+        avc.startAVC(self.packageName)
         avc.updateNickname()
         path1 = "resource/screenshot/test_updateNickname_02a.jpg"
         path2 = "resource/screenshot/test_updateNickname_02b.jpg"
@@ -76,7 +79,7 @@ class TestIOS:
     def test_updateAvatar(self):
         avc = self.avc
         avc.setCurrentDevice(0)
-        avc.startAVC()
+        avc.startAVC(self.packageName)
         poco("mine").click()
         path1 = "resource/screenshot/test_updateAvatar_a.jpg"
         path2 = "resource/screenshot/test_updateAvatar_b.jpg"
@@ -93,7 +96,7 @@ class TestIOS:
     def test_roomName_01(self,roomName):
         avc = self.avc
         avc.setCurrentDevice(0)
-        avc.startAVC()
+        avc.startAVC(self.packageName)
         avc.setRoomName(roomName)
         touch([100,100])
         path = "resource/screenshot/test_roomName_01_a.jpg"
@@ -112,7 +115,7 @@ class TestIOS:
     def test_roomName_02(self,roomName):
         avc = self.avc
         avc.setCurrentDevice(0)
-        avc.startAVC()
+        avc.startAVC(self.packageName)
         avc.setRoomName(roomName)
         touch([100, 100])
         path = "resource/screenshot/test_roomName_02_a.jpg"
@@ -131,7 +134,7 @@ class TestIOS:
     def test_password(self, password):
         avc = self.avc
         avc.setCurrentDevice(0)
-        avc.startAVC()
+        avc.startAVC(self.packageName)
         avc.setPassword(password)
         touch([100, 100])
         path = "resource/screenshot/test_password_a.jpg"
@@ -149,7 +152,7 @@ class TestIOS:
         roomName = self.channel_name
         password = self.password
         avc.setCurrentDevice(0)
-        avc.startAVC()
+        avc.startAVC(self.packageName)
         avc.setRoomName(roomName)
         avc.setPassword(password)
         touch([100, 100])
