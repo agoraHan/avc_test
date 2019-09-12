@@ -57,7 +57,7 @@ class IOS_AVC(Common_AVC):
             poco("video on").click()
 
     def unmuteVideoInchannel(self):
-        if poco("video om").exists():
+        if poco("video on").exists():
             print("video already unmute")
         else:
             poco("video off").click()
@@ -76,13 +76,13 @@ class IOS_AVC(Common_AVC):
 
     def setVideoResolution(self,resolution):
         '''
-        :param resotion: 0:360P(默认, 1:240P, 2:480P
+        :param resotion: 0:240P, 1:360P(默认),  2:480P
         '''
 
         if resolution == 0:
-            poco("360P").click()
-        elif resolution == 1:
             poco("240P").click()
+        elif resolution == 1:
+            poco("360P").click()
         elif resolution == 2:
             poco("480P").click()
         else:
