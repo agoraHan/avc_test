@@ -129,7 +129,7 @@ class IOS_AVC(Common_AVC):
         sleep(self.interval)
 
     def changeRoomPassword(self,pwd):
-        if poco("申请成为主持人").exists() or poco("申请成为主持人").exists():
+        if poco("申请成为主持人").exists() or poco("放弃主持人权限").exists():
             poco("房间密码").click()
             poco("TextField").click()
             poco("全选").click()
