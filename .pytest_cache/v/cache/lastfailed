@@ -30,5 +30,6 @@
   "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[l;'zxv c bnm,./]": true,
   "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[qwertyuiopasdfghjk]": true,
   "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[~!@#$%^&*())_+]": true,
-  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_02": true
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_02": true,
+  "testcase/ios/test_function.py::TestIOS::test_uploadLog[123]": true
 }

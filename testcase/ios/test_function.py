@@ -28,7 +28,7 @@ class TestIOS:
         path2 = "resource/screenshot/getAppVersion_b.jpg"
         avc.getScreenshot(path1)
         width,height = avc.getImageSize(path1)
-        avc.getCustomizeImage(path1,path2,0,5/6*height,width,height)
+        avc.getCustomizeImage(path1,path2,0,6.5/7*height,width,height)
         version = avc.getWordsInImage(path2)
         assert version == "V3.1.8 Build 488"
 
@@ -162,9 +162,10 @@ class TestIOS:
         sleep(2)
         avc.leaveChannel()
 
-    @pytest.mark.parametrize("msg", [ "1234567890123456789"])
-    def test_uploadLog(self,msg):
+    @pytest.mark.parametrize("pwd", [ "123"])
+    def test_uploadLog(self,pwd):
         avc = self.avc
         avc.setCurrentDevice(0)
-        avc.sendMessage()
-        text(msg)
+        avc.goSettingInChannel()
+        avc.changeRoomPassword(pwd)
+

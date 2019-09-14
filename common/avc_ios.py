@@ -25,7 +25,6 @@ class IOS_AVC(Common_AVC):
         poco("全选").click()
         poco("剪切").click()
 
-
     def updateAvatar(self):
         btn_avatar = poco("Window").child("Other").child("Other").child("Other").child("Other").child("Other")[1].child("Button")[0]
         btn_avatar.click()
@@ -125,3 +124,16 @@ class IOS_AVC(Common_AVC):
         wait(Template(r"resource/images/tpl1568205469989.png", record_pos=(0.003, -0.489), resolution=(750, 1334)))
         print("Upload Success")
 
+    def goSettingInChannel(self):
+        poco("Button").click()
+        sleep(self.interval)
+
+    def changeRoomPassword(self,pwd):
+        if poco("申请成为主持人").exists() or poco("申请成为主持人").exists():
+            poco("房间密码").click()
+            poco("TextField").click()
+            poco("全选").click()
+            poco("剪切").click()
+            text(pwd)
+        else:
+            raise TimeoutError("You are not the host!")
