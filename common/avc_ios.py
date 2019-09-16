@@ -18,12 +18,13 @@ class IOS_AVC(Common_AVC):
     def goMine(self):
         poco("mine").click()
 
-    def updateNickname(self):
+    def updateNickname(self,nickname):
         btn_nickName = poco("Window").child("Other").child("Other").child("Other").child("Other").child("Other")[1].child("Button")[1]
         btn_nickName.click()
         poco("TextField").click()
         poco("全选").click()
         poco("剪切").click()
+        text(nickname)
 
     def updateAvatar(self):
         btn_avatar = poco("Window").child("Other").child("Other").child("Other").child("Other").child("Other")[1].child("Button")[0]
@@ -128,6 +129,18 @@ class IOS_AVC(Common_AVC):
         poco("Button").click()
         sleep(self.interval)
 
+    def applyToHost(self):
+        if poco().exists():
+            print("You are already the host")
+        else:
+            poco("申请成为主持人").click()
+
+    def giveUpHost(self):
+        if poco("申请成为主持人").exists():
+            print("You are not the host")
+        else:
+            poco("放弃主持人权限").click()
+
     def changeRoomPassword(self,pwd):
         if poco("申请成为主持人").exists() or poco("放弃主持人权限").exists():
             poco("房间密码").click()
@@ -137,3 +150,5 @@ class IOS_AVC(Common_AVC):
             text(pwd)
         else:
             raise TimeoutError("You are not the host!")
+
+

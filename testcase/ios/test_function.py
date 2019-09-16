@@ -1,5 +1,6 @@
 #-*- coding:utf-8 -*-
 from airtest.core.api import  *
+from airtest.core.ios.ios import IOS
 import pytest
 from common import case_tag,verify_utils
 from common.avc_ios import IOS_AVC
@@ -42,10 +43,9 @@ class TestIOS:
         avc.setCurrentDevice(0)
         avc.startAVC(self.packageName)
         avc.goMine()
-        avc.updateNickname()
+        avc.updateNickname(nickname)
         path1 = "resource/screenshot/test_updateNickname_01a.jpg"
         path2 = "resource/screenshot/test_updateNickname_01b.jpg"
-        text(nickname)
         avc.getScreenshot(path1)
         width,height= avc.getImageSize(path1)
         avc.getCustomizeImage(path1,path2,1/2*width,1/6*height,width,1.5/6*height)
@@ -58,12 +58,12 @@ class TestIOS:
     nickname长度 > 18
     '''
     @pytest.mark.tags(case_tag.iOS, case_tag.MEDIUM, case_tag.AUTOMATED, case_tag.FUNCTIONALITY)
-    def test_updateNickname_02(self):
+    def test_updateNickname_02(self,nickname):
         avc = self.avc
         avc.setCurrentDevice(0)
         avc.startAVC(self.packageName)
         avc.goMine()
-        avc.updateNickname()
+        avc.updateNickname(nickname)
         path1 = "resource/screenshot/test_updateNickname_02a.jpg"
         path2 = "resource/screenshot/test_updateNickname_02b.jpg"
         text("1234567890123456789")
