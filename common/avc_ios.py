@@ -152,3 +152,15 @@ class IOS_AVC(Common_AVC):
             raise TimeoutError("You are not the host!")
 
 
+    def CameraOn(self):
+        if exists(Template(r"resource/images/tpl1568622538061.png", record_pos=(-0.001, -0.5), resolution=(1125, 2436))):
+            print("Camera already on")
+        else:
+            if poco(value="1").exists():
+                poco(value="0").click()
+            elif poco("Window").child("Other").child("Other").child("Other").child("Other").child("Other").child("Other")[2].child("Switch")[1].exists():
+                poco("Window").child("Other").child("Other").child("Other").child("Other").child("Other").child("Other")[2].child("Switch")[0].click()
+
+
+
+
