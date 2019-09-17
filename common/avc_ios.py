@@ -7,6 +7,7 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd=r'/usr/local/Cellar/tesseract/4.1.0/bin/tesseract'
 connect_device("ios:///http://127.0.0.1:8100")
 # connect_device("Android:///")
+from common import avc_constance as ac
 from poco.drivers.ios import iosPoco
 poco = iosPoco()
 auto_setup(__file__)
@@ -17,6 +18,9 @@ class IOS_AVC(Common_AVC):
 
     def goMine(self):
         poco("mine").click()
+
+    def back(self):
+        poco("back").click()
 
     def updateNickname(self,nickname):
         btn_nickName = poco("Window").child("Other").child("Other").child("Other").child("Other").child("Other")[1].child("Button")[1]
@@ -37,14 +41,19 @@ class IOS_AVC(Common_AVC):
         # touch(Template(r"resource/images/tpl1568185999017.png", record_pos=(0.023, -0.149), resolution=(750, 1334)))
         poco("Window").child("Other").child("Other").child("Other").child("Other").child("Other").child("TextField")[0].click()
         text(roomName, enter=False)
+        touch([100, 100])
 
     def setPassword(self,password):
         poco("Window").child("Other").child("Other").child("Other").child("Other").child("Other").child("TextField")[1].click()
         text(password,enter=False)
+        touch([100, 100])
 
     def joinChannel(self):
         poco("加入").click()
-        wait(Template(r"resource/images/tpl1568189862382.png", record_pos=(0.0, 0.811), resolution=(750, 1334)))
+        if poco("Room join failed, incorrect password, ").exists():
+            raise RuntimeError(" password is incorrect")
+        else:
+            wait(Template(r"resource/images/tpl1568189862382.png", record_pos=(0.0, 0.811), resolution=(750, 1334)))
 
     def leaveChannel(self):
         poco("hang up").click()
@@ -79,11 +88,11 @@ class IOS_AVC(Common_AVC):
         :param resotion: 0:240P, 1:360P(默认),  2:480P
         '''
 
-        if resolution == 0:
+        if resolution == ac.Video_Resolution.video_240P:
             poco("240P").click()
-        elif resolution == 1:
+        elif resolution == ac.Video_Resolution.video_360P:
             poco("360P").click()
-        elif resolution == 2:
+        elif resolution == ac.Video_Resolution.video_480p:
             poco("480P").click()
         else:
             raise ValueError("[Fail] Resolution is not supported : %s" % resolution)
@@ -112,9 +121,13 @@ class IOS_AVC(Common_AVC):
         else:
             poco("audio off").click()
 
-    def sendMessage(self):
+    def sendMessage(self,msg):
         poco("message").click()
         poco("TextField").click()
+        text(msg)
+
+    def goToParticipantList(self):
+        poco("participants").click()
 
 
     def uploadLog(self):
@@ -130,16 +143,18 @@ class IOS_AVC(Common_AVC):
         sleep(self.interval)
 
     def applyToHost(self):
-        if poco().exists():
+        if poco("放弃主持人权限").exists():
             print("You are already the host")
         else:
             poco("申请成为主持人").click()
+            assert poco("放弃主持人权限").exists()
 
     def giveUpHost(self):
         if poco("申请成为主持人").exists():
             print("You are not the host")
         else:
             poco("放弃主持人权限").click()
+            assert poco("无").exists()
 
     def changeRoomPassword(self,pwd):
         if poco("申请成为主持人").exists() or poco("放弃主持人权限").exists():

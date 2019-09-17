@@ -22,6 +22,9 @@
   "testcase/ios/test_function.py::TestIOS::()::test_password[ZXCVBNM]",
   "testcase/ios/test_function.py::TestIOS::()::test_password[1234567890123456789]",
   "testcase/ios/test_function.py::TestIOS::()::test_password[,./!@#$%^&*()-+]",
-  "testcase/ios/test_function.py::TestIOS::()::test_joinLeaveChannel",
-  "testcase/ios/test_function.py::TestIOS::()::test_uploadLog[123]"
+  "testcase/ios/test_function.py::TestIOS::()::test_joinChannelWithDifferentReslotion[240P]",
+  "testcase/ios/test_function.py::TestIOS::()::test_joinChannelWithDifferentReslotion[360P]",
+  "testcase/ios/test_function.py::TestIOS::()::test_joinChannelWithDifferentReslotion[480P]",
+  "testcase/ios/test_function.py::TestIOS::()::test_checkParticipants",
+  "testcase/ios/test_function.py::TestIOS::()::test_sendMsg"
 ]

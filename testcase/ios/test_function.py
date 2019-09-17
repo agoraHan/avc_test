@@ -2,8 +2,10 @@
 from airtest.core.api import  *
 from airtest.core.ios.ios import IOS
 import pytest
+import re
 from common import case_tag,verify_utils
 from common.avc_ios import IOS_AVC
+from common import avc_constance as ac
 from poco.drivers.ios import iosPoco
 poco = iosPoco()
 class TestIOS:
@@ -12,8 +14,8 @@ class TestIOS:
         self.avc = IOS_AVC()
         self.channel_name = "AVCAUTO"
         self.password = "avctest"
-        self.packageName = "io.agora.videocall"
-
+        self.packageName = ac.Package_Name.ios_packageName
+        self.screeshot_path = "resource/screenshot/"
     def tearDown(self):
         pass
 
@@ -25,8 +27,8 @@ class TestIOS:
         avc = self.avc
         avc.setCurrentDevice(0)
         avc.startAVC(self.packageName)
-        path1 = "resource/screenshot/getAppVersion_a.jpg"
-        path2 = "resource/screenshot/getAppVersion_b.jpg"
+        path1 = self.screeshot_path+"getAppVersion_a.jpg"
+        path2 = self.screeshot_path+"getAppVersion_b.jpg"
         avc.getScreenshot(path1)
         width,height = avc.getImageSize(path1)
         avc.getCustomizeImage(path1,path2,0,6.5/7*height,width,height)
@@ -44,15 +46,14 @@ class TestIOS:
         avc.startAVC(self.packageName)
         avc.goMine()
         avc.updateNickname(nickname)
-        path1 = "resource/screenshot/test_updateNickname_01a.jpg"
-        path2 = "resource/screenshot/test_updateNickname_01b.jpg"
+        path1 = self.screeshot_path+"test_updateNickname_01a.jpg"
+        path2 = self.screeshot_path++"test_updateNickname_01b.jpg"
         avc.getScreenshot(path1)
         width,height= avc.getImageSize(path1)
         avc.getCustomizeImage(path1,path2,1/2*width,1/6*height,width,1.5/6*height)
         words = avc.getWordsInImage(path2)
         cur_nickname = nickname
         assert words == cur_nickname +" >"
-        poco("back").click()
 
     '''
     nickname长度 > 18
@@ -64,15 +65,15 @@ class TestIOS:
         avc.startAVC(self.packageName)
         avc.goMine()
         avc.updateNickname(nickname)
-        path1 = "resource/screenshot/test_updateNickname_02a.jpg"
-        path2 = "resource/screenshot/test_updateNickname_02b.jpg"
+        path1 = self.screeshot_path+"test_updateNickname_02a.jpg"
+        path2 = self.screeshot_path+"test_updateNickname_02b.jpg"
         text("1234567890123456789")
         avc.getScreenshot(path1)
         width, height = avc.getImageSize(path1)
         avc.getCustomizeImage(path1, path2, 1/2*width, 1 / 6 * height, width, 1.5 / 6 * height)
         words = avc.getWordsInImage(path2)
         assert words == "123456789012345678 >"
-        poco("back").click()
+
 
     '''
     更换头像
@@ -83,8 +84,8 @@ class TestIOS:
         avc.setCurrentDevice(0)
         avc.startAVC(self.packageName)
         avc.goMine()
-        path1 = "resource/screenshot/test_updateAvatar_a.jpg"
-        path2 = "resource/screenshot/test_updateAvatar_b.jpg"
+        path1 = self.screeshot_path+"test_updateAvatar_a.jpg"
+        path2 = self.screeshot_path+"test_updateAvatar_b.jpg"
         avc.getScreenshot(filename=path1)
         avc.updateAvatar()
         avc.getScreenshot(filename=path2)
@@ -101,8 +102,8 @@ class TestIOS:
         avc.startAVC(self.packageName)
         avc.setRoomName(roomName)
         touch([100,100])
-        path = "resource/screenshot/test_roomName_01_a.jpg"
-        path1 = "resource/screenshot/test_roomName_01_b.jpg"
+        path = self.screeshot_path+"test_roomName_01_a.jpg"
+        path1 = self.screeshot_path+"test_roomName_01_b.jpg"
         avc.getScreenshot(path)
         width,height=avc.getImageSize(path)
         avc.getCustomizeImage(path,path1,1/5*width,1/3*height,width,1/2*height)
@@ -120,8 +121,8 @@ class TestIOS:
         avc.startAVC(self.packageName)
         avc.setRoomName(roomName)
         touch([100, 100])
-        path = "resource/screenshot/test_roomName_02_a.jpg"
-        path1 = "resource/screenshot/test_roomName_02_b.jpg"
+        path = self.screeshot_path+"test_roomName_02_a.jpg"
+        path1 = self.screeshot_path+"test_roomName_02_b.jpg"
         avc.getScreenshot(path)
         width,height=avc.getImageSize(path)
         avc.getCustomizeImage(path,path1,1/5*width,1/3*height,width,1/2*height)
@@ -138,18 +139,18 @@ class TestIOS:
         avc.setCurrentDevice(0)
         avc.startAVC(self.packageName)
         avc.setPassword(password)
-        touch([100, 100])
-        path = "resource/screenshot/test_password_a.jpg"
-        path1 = "resource/screenshot/test_password_b.jpg"
+        path = self.screeshot_path+"test_password_a.jpg"
+        path1 = self.screeshot_path+"test_password_b.jpg"
         avc.getScreenshot(path)
         width,height = avc.getImageSize(path)
-        avc.getCustomizeImage(path, path1, 1/5*width, 4/9*height, width, 7/9*height)
+        avc.getCustomizeImage(path, path1, 1/5*width, 4/9*height, width, 5/9*height)
         pwd = avc.getWordsInImage(path1)
         assert len(pwd) <= 18
 
-    "进退房间"
-    @pytest.mark.tags(case_tag.iOS, case_tag.HIGH, case_tag.AUTOMATED, case_tag.FUNCTIONALITY)
-    def test_joinLeaveChannel(self):
+    "设置不同的分辨率进入房间"
+    @pytest.mark.parametrize("resolution",[ac.Video_Resolution.video_240P,ac.Video_Resolution.video_360P,ac.Video_Resolution.video_480p])
+    @pytest.mark.tags(case_tag.iOS, case_tag.MEDIUM, case_tag.AUTOMATED, case_tag.FUNCTIONALITY)
+    def test_joinChannelWithDifferentReslotion(self,resolution):
         avc = self.avc
         roomName = self.channel_name
         password = self.password
@@ -157,15 +158,46 @@ class TestIOS:
         avc.startAVC(self.packageName)
         avc.setRoomName(roomName)
         avc.setPassword(password)
-        touch([100, 100])
+        avc.goMine()
+        avc.setVideoResolution(resolution=resolution)
+        avc.back()
         avc.joinChannel()
         sleep(2)
         avc.leaveChannel()
 
-    @pytest.mark.parametrize("pwd", [ "123"])
-    def test_uploadLog(self,pwd):
+    #查看与会者列表人数
+    @pytest.mark.tags(case_tag.iOS, case_tag.MEDIUM, case_tag.AUTOMATED, case_tag.FUNCTIONALITY)
+    def test_checkParticipants(self):
         avc = self.avc
         avc.setCurrentDevice(0)
-        avc.goSettingInChannel()
-        avc.changeRoomPassword(pwd)
+        avc.startAVC(self.packageName)
+        avc.setRoomName(roomName=self.channel_name)
+        avc.setPassword(password=self.password)
+        avc.joinChannel()
+        avc.goToParticipantList()
+        path = self.screeshot_path+"test_checkParticipants_a.jpg"
+        path1 = self.screeshot_path+"test_checkParticipants_b.jpg"
+        avc.getScreenshot(filename=path)
+        width,height = avc.getImageSize(path)
+        avc.getCustomizeImage(path,path1,1/3*width,1/20*height,2/3*width,1/8*height)
+        avc.getNumberOfParticipants(path1)
+        assert avc.getNumberOfParticipants(path1) == 1
+
+    #会议中发送消息
+    @pytest.mark.tags(case_tag.iOS, case_tag.HIGH, case_tag.AUTOMATED, case_tag.FUNCTIONALITY)
+    def test_sendMsg(self):
+        avc = self.avc
+        avc.setCurrentDevice(0)
+        avc.startAVC(self.packageName)
+        avc.setRoomName(self.channel_name)
+        avc.setPassword(self.password)
+        avc.joinChannel()
+        msg= ["qwertyuiopabcdefghijklzxcvbnm","QWERTYUIOPASDFGHJKLZXCVBNM","~!@#$%^&*()_____+~！@￥……（）：「」【】：《》？、。\，","测试消息发送","👌"]
+        avc.sendMessage(msg)
+        avc.back()
+        #todo:校验有多个 用户在会议中 远端是否可以接收到消息
+
+
+
+
 

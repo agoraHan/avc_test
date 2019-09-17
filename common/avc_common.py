@@ -3,6 +3,7 @@ from airtest.core.api import *
 from PIL import Image
 import cv2 as cv
 import pytesseract
+import re
 pytesseract.pytesseract.tesseract_cmd=r'/usr/local/Cellar/tesseract/4.1.0/bin/tesseract'
 connect_device("ios:///http://127.0.0.1:8100")
 # connect_device("Android:///")
@@ -61,3 +62,8 @@ class Common_AVC:
         img = cv.imread(image_path)
         text = pytesseract.image_to_string(Image.fromarray(img))
         return text
+
+    def getNumberOfParticipants(self,file_path):
+        text = self.getWordsInImage(file_path).split()[1]
+        number  = re.findall("\d+",text)[0]
+        return int(number)
