@@ -3,6 +3,7 @@ from airtest.core.api import  *
 from airtest.core.ios.ios import IOS
 import pytest
 import re
+import json
 from common import case_tag,verify_utils
 from common.avc_ios import IOS_AVC
 from common import avc_constance as ac
@@ -31,14 +32,14 @@ class TestIOS:
         path2 = self.screeshot_path+"getAppVersion_b.jpg"
         avc.getScreenshot(path1)
         width,height = avc.getImageSize(path1)
-        avc.getCustomizeImage(path1,path2,0,6.5/7*height,width,height)
+        avc.getCustomizeImage(path1,path2,0,6/7*height,width,height)
         version = avc.getWordsInImage(path2)
         assert version == "V3.1.8 Build 488"
 
     '''
     nickname长度 <= 18
     '''
-    @pytest.mark.parametrize("nickname",["1234567890","qwertyuiopasdfghjk","Q WERTYUIOPASDFGHJ","KLZXCVVBNM","l;'zxv c bnm,./","~!@#$%^&*())_+"])
+    @pytest.mark.parametrize("nickname",["1234567890","qwertyuiopasdfghjk","QWERTYUIOPASDFGHJ","KLZXCVVBNM","l;'zxv c bnm,./","~!@#$%^&()_+"])
     @pytest.mark.tags(case_tag.iOS,case_tag.MEDIUM,case_tag.AUTOMATED,case_tag.FUNCTIONALITY)
     def test_updateNickname_01(self,nickname):
         avc = self.avc
@@ -47,13 +48,14 @@ class TestIOS:
         avc.goMine()
         avc.updateNickname(nickname)
         path1 = self.screeshot_path+"test_updateNickname_01a.jpg"
-        path2 = self.screeshot_path++"test_updateNickname_01b.jpg"
+        path2 = self.screeshot_path+"test_updateNickname_01b.jpg"
         avc.getScreenshot(path1)
         width,height= avc.getImageSize(path1)
-        avc.getCustomizeImage(path1,path2,1/2*width,1/6*height,width,1.5/6*height)
+        avc.getCustomizeImage(path1,path2,1/3*width,1/6*height,width,1.5/6*height)
         words = avc.getWordsInImage(path2)
         cur_nickname = nickname
         assert words == cur_nickname +" >"
+        avc.back()
 
     '''
     nickname长度 > 18
@@ -147,21 +149,36 @@ class TestIOS:
         pwd = avc.getWordsInImage(path1)
         assert len(pwd) <= 18
 
+    '''输入的房间密码正确可以正常进入会议'''
+    @pytest.mark.tags(case_tag.iOS, case_tag.MEDIUM, case_tag.AUTOMATED, case_tag.FUNCTIONALITY)
+    def test_joinchannelWithiCorrectPassword(self):
+        avc = self.avc
+        avc.setCurrentDevice(0)
+        avc.startAVC(self.packageName)
+        avc.joinChannel(self.channel_name,self.password)
+        avc.leaveChannel()
+
+    '''输入的房间密码不正确无法进入会议'''
+    @pytest.mark.tags(case_tag.iOS, case_tag.MEDIUM, case_tag.AUTOMATED, case_tag.FUNCTIONALITY)
+    def test_joinchannelWithIncorrectPassword(self):
+        avc = self.avc
+        avc.setCurrentDevice(0)
+        avc.startAVC(self.packageName)
+        avc.joinChannel(self.channel_name,"error")
+        assert poco("Room join failed, incorrect password, ").exists()
+
+
     "设置不同的分辨率进入房间"
     @pytest.mark.parametrize("resolution",[ac.Video_Resolution.video_240P,ac.Video_Resolution.video_360P,ac.Video_Resolution.video_480p])
     @pytest.mark.tags(case_tag.iOS, case_tag.MEDIUM, case_tag.AUTOMATED, case_tag.FUNCTIONALITY)
     def test_joinChannelWithDifferentReslotion(self,resolution):
         avc = self.avc
-        roomName = self.channel_name
-        password = self.password
         avc.setCurrentDevice(0)
         avc.startAVC(self.packageName)
-        avc.setRoomName(roomName)
-        avc.setPassword(password)
         avc.goMine()
         avc.setVideoResolution(resolution=resolution)
         avc.back()
-        avc.joinChannel()
+        avc.joinChannel(self.channel_name,self.password)
         sleep(2)
         avc.leaveChannel()
 
@@ -171,9 +188,7 @@ class TestIOS:
         avc = self.avc
         avc.setCurrentDevice(0)
         avc.startAVC(self.packageName)
-        avc.setRoomName(roomName=self.channel_name)
-        avc.setPassword(password=self.password)
-        avc.joinChannel()
+        avc.joinChannel(self.channel_name,self.password)
         avc.goToParticipantList()
         path = self.screeshot_path+"test_checkParticipants_a.jpg"
         path1 = self.screeshot_path+"test_checkParticipants_b.jpg"
@@ -189,9 +204,7 @@ class TestIOS:
         avc = self.avc
         avc.setCurrentDevice(0)
         avc.startAVC(self.packageName)
-        avc.setRoomName(self.channel_name)
-        avc.setPassword(self.password)
-        avc.joinChannel()
+        avc.joinChannel(self.channel_name,self.password)
         msg= ["qwertyuiopabcdefghijklzxcvbnm","QWERTYUIOPASDFGHJKLZXCVBNM","~!@#$%^&*()_____+~！@￥……（）：「」【】：《》？、。\，","测试消息发送","👌"]
         avc.sendMessage(msg)
         avc.back()

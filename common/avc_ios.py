@@ -41,23 +41,22 @@ class IOS_AVC(Common_AVC):
         # touch(Template(r"resource/images/tpl1568185999017.png", record_pos=(0.023, -0.149), resolution=(750, 1334)))
         poco("Window").child("Other").child("Other").child("Other").child("Other").child("Other").child("TextField")[0].click()
         text(roomName, enter=False)
-        touch([100, 100])
 
     def setPassword(self,password):
         poco("Window").child("Other").child("Other").child("Other").child("Other").child("Other").child("TextField")[1].click()
         text(password,enter=False)
-        touch([100, 100])
+        touch(Template('resource/images/tpl1568100069708.png'))
 
-    def joinChannel(self):
+    def joinChannel(self,roomName,password):
+        self.setRoomName(roomName)
+        self.setPassword(password)
         poco("加入").click()
-        if poco("Room join failed, incorrect password, ").exists():
-            raise RuntimeError(" password is incorrect")
-        else:
-            wait(Template(r"resource/images/tpl1568189862382.png", record_pos=(0.0, 0.811), resolution=(750, 1334)))
+        wait(Template(r"resource/images/tpl1568189862382.png", record_pos=(0.0, 0.811), resolution=(750, 1334)))
+        print(">>>>>>>>>>Join Channel Success>>>>>>>>")
 
     def leaveChannel(self):
         poco("hang up").click()
-        wait(Template(r"resource/images/tpl1568100069708.png", record_pos=(0.003, -0.54), resolution=(750, 1334)),5)
+        print(">>>>>>>>>>Leave Channel Success>>>>>>>>")
 
     def muteVideoInchannel(self):
         if poco("video off").exists():
