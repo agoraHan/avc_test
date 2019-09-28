@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23a8c29b-b5da-41fc-ba0d-7ce2ade10e53" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/common/pytest_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testcase/ios/test_manual.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/avc_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/avc_test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.pytest_cache/v/cache/lastfailed" beforeDir="false" afterPath="$PROJECT_DIR$/.pytest_cache/v/cache/lastfailed" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.pytest_cache/v/cache/nodeids" beforeDir="false" afterPath="$PROJECT_DIR$/.pytest_cache/v/cache/nodeids" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/avc_ios.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/avc_ios.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/images/tpl1568034222130.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/verify_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/verify_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource/screenshot/getAppVersion_a.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resource/screenshot/getAppVersion_a.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resource/screenshot/getAppVersion_b.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resource/screenshot/getAppVersion_b.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/screenshot/test_updateNickname_01a.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resource/screenshot/test_updateNickname_01a.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/screenshot/test_updateNickname_01b.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resource/screenshot/test_updateNickname_01b.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testcase/ios/test_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcase/ios/test_function.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,6 +24,107 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/avc_test$test_function.coverage" NAME="test_function Coverage Results" MODIFIED="1568026177787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase/ios" />
+    <SUITE FILE_PATH="coverage/avc_test$__init____3_.coverage" NAME="__init__ (3) Coverage Results" MODIFIED="1569577204592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase/ios" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-829065551">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="1" />
+          <entry key="md" value="1" />
+          <entry key="py" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="1" />
+          <entry key="Markdown" value="1" />
+          <entry key="Python" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="1225" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="1225" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/verify_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="433">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="e#22#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testcase/ios/test_function.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="210" selection-start-line="210" selection-end-line="210" />
+              <folding>
+                <element signature="e#22#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testcase/ios/test_manual.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+              <folding>
+                <element signature="e#22#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/avc_ios.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2115">
+              <caret line="143" column="18" lean-forward="true" selection-start-line="143" selection-start-column="18" selection-end-line="143" selection-end-column="18" />
+              <folding>
+                <element signature="e#22#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="255">
+                <caret line="17" selection-start-line="17" selection-end-line="17" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -33,13 +136,79 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/common/avc_ios.py" />
+        <option value="$PROJECT_DIR$/common/pytest_utils.py" />
+        <option value="$PROJECT_DIR$/testcase/ios/test_manual.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/testcase/ios/test_function.py" />
+        <option value="$PROJECT_DIR$/common/verify_utils.py" />
+        <option value="$PROJECT_DIR$/report/avc.html" />
+        <option value="$PROJECT_DIR$/testcase/ios/__init__.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="53" />
+    <option name="y" value="23" />
+    <option name="width" value="1387" />
+    <option name="height" value="877" />
+  </component>
   <component name="ProjectId" id="1Qv0Q6ne6pkDLblJ4zjCvRTwZqj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="avc_test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="avc_test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="avc_test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="avc_test" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="avc_test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="avc_test" type="462c0819:PsiDirectoryNode" />
+              <item name="report" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="avc_test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="avc_test" type="462c0819:PsiDirectoryNode" />
+              <item name="testcase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="avc_test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="avc_test" type="462c0819:PsiDirectoryNode" />
+              <item name="testcase" type="462c0819:PsiDirectoryNode" />
+              <item name="ios" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resource/images" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -59,8 +228,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.__init__ (2)">
-    <configuration default="true" type="DjangoTestsConfigurationType">
+  <component name="RunManager" selected="Python.__init__ (3)">
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <module name="AVC" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,6 +319,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="__init__ (3)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="avc_test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcase/ios" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcase/ios/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="avc_test" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -194,28 +385,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_function" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="avc_test" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcase/ios" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcase/ios/test_function.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
       <module name="AVC" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -228,7 +397,7 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
@@ -304,19 +473,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.test_function" />
       <item itemvalue="Python.__init__" />
       <item itemvalue="Python tests.py.test in test_update_nickname.py" />
       <item itemvalue="Python.__init__ (1)" />
       <item itemvalue="Python.__init__ (2)" />
+      <item itemvalue="Python.__init__ (3)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.__init__ (3)" />
         <item itemvalue="Python.__init__ (2)" />
         <item itemvalue="Python.__init__ (1)" />
         <item itemvalue="Python.__init__" />
         <item itemvalue="Python tests.py.test in test_update_nickname.py" />
-        <item itemvalue="Python.test_function" />
       </list>
     </recent_temporary>
   </component>
@@ -339,6 +508,32 @@
     </task>
     <servers />
   </component>
+  <component name="ToolWindowManager">
+    <frame x="53" y="23" width="1387" height="877" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2535316" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41528663" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -348,6 +543,12 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -355,12 +556,15 @@
       </map>
     </option>
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/common/verify_utils.py</url>
-          <line>23</line>
+          <line>24</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
@@ -370,6 +574,244 @@
     <SUITE FILE_PATH="coverage/avc_test$__init____2_.coverage" NAME="__init__ (2) Coverage Results" MODIFIED="1569492547543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/resource/screenshot" />
     <SUITE FILE_PATH="coverage/avc_test$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1568723940951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/resource" />
     <SUITE FILE_PATH="coverage/avc_test$__init____1_.coverage" NAME="__init__ (1) Coverage Results" MODIFIED="1569487492401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testcase" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/testcase/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/python_stubs/-2010535109/time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/pytest_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-121">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/avc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="351" selection-end-column="249" />
+          <folding>
+            <element signature="e#7706#7712#0" expanded="true" />
+            <element signature="e#7718#7724#0" expanded="true" />
+            <element signature="e#7726#7732#0" expanded="true" />
+            <element signature="e#7737#7743#0" expanded="true" />
+            <element signature="e#7745#7751#0" expanded="true" />
+            <element signature="e#7753#7759#0" expanded="true" />
+            <element signature="e#7761#7767#0" expanded="true" />
+            <element signature="e#7772#7778#0" expanded="true" />
+            <element signature="e#7780#7786#0" expanded="true" />
+            <element signature="e#7792#7798#0" expanded="true" />
+            <element signature="e#7800#7806#0" expanded="true" />
+            <element signature="e#7811#7817#0" expanded="true" />
+            <element signature="e#7969#7975#0" expanded="true" />
+            <element signature="e#7982#7988#0" expanded="true" />
+            <element signature="e#7990#7996#0" expanded="true" />
+            <element signature="e#8001#8007#0" expanded="true" />
+            <element signature="e#8009#8015#0" expanded="true" />
+            <element signature="e#8019#8025#0" expanded="true" />
+            <element signature="e#8027#8033#0" expanded="true" />
+            <element signature="e#8038#8044#0" expanded="true" />
+            <element signature="e#8046#8052#0" expanded="true" />
+            <element signature="e#8065#8071#0" expanded="true" />
+            <element signature="e#8073#8079#0" expanded="true" />
+            <element signature="e#8082#8088#0" expanded="true" />
+            <element signature="e#8090#8096#0" expanded="true" />
+            <element signature="e#8102#8108#0" expanded="true" />
+            <element signature="e#8110#8116#0" expanded="true" />
+            <element signature="e#8121#8127#0" expanded="true" />
+            <element signature="e#8129#8135#0" expanded="true" />
+            <element signature="e#8143#8149#0" expanded="true" />
+            <element signature="e#8151#8157#0" expanded="true" />
+            <element signature="e#8162#8168#0" expanded="true" />
+            <element signature="e#8170#8176#0" expanded="true" />
+            <element signature="e#8184#8190#0" expanded="true" />
+            <element signature="e#8192#8198#0" expanded="true" />
+            <element signature="e#8203#8209#0" expanded="true" />
+            <element signature="e#8211#8217#0" expanded="true" />
+            <element signature="e#8226#8232#0" expanded="true" />
+            <element signature="e#8234#8240#0" expanded="true" />
+            <element signature="e#8245#8251#0" expanded="true" />
+            <element signature="e#8253#8259#0" expanded="true" />
+            <element signature="e#8263#8269#0" expanded="true" />
+            <element signature="e#8271#8277#0" expanded="true" />
+            <element signature="e#8283#8289#0" expanded="true" />
+            <element signature="e#8291#8297#0" expanded="true" />
+            <element signature="e#8310#8316#0" expanded="true" />
+            <element signature="e#8318#8324#0" expanded="true" />
+            <element signature="e#8329#8335#0" expanded="true" />
+            <element signature="e#10638#10643#0" expanded="true" />
+            <element signature="e#10835#10839#0" expanded="true" />
+            <element signature="e#10895#10899#0" expanded="true" />
+            <element signature="e#10925#10930#0" expanded="true" />
+            <element signature="e#10981#10987#0" expanded="true" />
+            <element signature="e#10995#11001#0" expanded="true" />
+            <element signature="e#11003#11009#0" expanded="true" />
+            <element signature="e#11019#11025#0" expanded="true" />
+            <element signature="e#11026#11032#0" expanded="true" />
+            <element signature="e#11050#11056#0" expanded="true" />
+            <element signature="e#11057#11063#0" expanded="true" />
+            <element signature="e#11081#11087#0" expanded="true" />
+            <element signature="e#11088#11094#0" expanded="true" />
+            <element signature="e#11103#11109#0" expanded="true" />
+            <element signature="e#11110#11116#0" expanded="true" />
+            <element signature="e#11134#11140#0" expanded="true" />
+            <element signature="e#11141#11147#0" expanded="true" />
+            <element signature="e#11154#11159#0" expanded="true" />
+            <element signature="e#11165#11171#0" expanded="true" />
+            <element signature="e#11466#11472#0" expanded="true" />
+            <element signature="e#11519#11525#0" expanded="true" />
+            <element signature="e#11546#11552#0" expanded="true" />
+            <element signature="e#11599#11605#0" expanded="true" />
+            <element signature="e#11660#11666#0" expanded="true" />
+            <element signature="e#11670#11676#0" expanded="true" />
+            <element signature="e#11943#11947#0" expanded="true" />
+            <element signature="e#11984#11990#0" expanded="true" />
+            <element signature="e#11991#11995#0" expanded="true" />
+            <element signature="e#11995#12001#0" expanded="true" />
+            <element signature="e#12070#12075#0" expanded="true" />
+            <element signature="e#12082#12086#0" expanded="true" />
+            <element signature="e#12109#12114#0" expanded="true" />
+            <element signature="e#12121#12125#0" expanded="true" />
+            <element signature="e#12182#12187#0" expanded="true" />
+            <element signature="e#12194#12198#0" expanded="true" />
+            <element signature="e#12300#12305#0" expanded="true" />
+            <element signature="e#12312#12316#0" expanded="true" />
+            <element signature="e#13623#13627#0" expanded="true" />
+            <element signature="e#13683#13687#0" expanded="true" />
+            <element signature="e#13769#13775#0" expanded="true" />
+            <element signature="e#13783#13789#0" expanded="true" />
+            <element signature="e#13791#13797#0" expanded="true" />
+            <element signature="e#13807#13813#0" expanded="true" />
+            <element signature="e#13814#13820#0" expanded="true" />
+            <element signature="e#13838#13844#0" expanded="true" />
+            <element signature="e#13845#13851#0" expanded="true" />
+            <element signature="e#13869#13875#0" expanded="true" />
+            <element signature="e#13876#13882#0" expanded="true" />
+            <element signature="e#13890#13896#0" expanded="true" />
+            <element signature="e#13897#13903#0" expanded="true" />
+            <element signature="e#13921#13927#0" expanded="true" />
+            <element signature="e#13928#13934#0" expanded="true" />
+            <element signature="e#13941#13946#0" expanded="true" />
+            <element signature="e#13952#13958#0" expanded="true" />
+            <element signature="e#14253#14259#0" expanded="true" />
+            <element signature="e#14306#14312#0" expanded="true" />
+            <element signature="e#14333#14339#0" expanded="true" />
+            <element signature="e#14386#14392#0" expanded="true" />
+            <element signature="e#14447#14453#0" expanded="true" />
+            <element signature="e#14457#14463#0" expanded="true" />
+            <element signature="e#14730#14734#0" expanded="true" />
+            <element signature="e#14771#14777#0" expanded="true" />
+            <element signature="e#14778#14782#0" expanded="true" />
+            <element signature="e#14782#14788#0" expanded="true" />
+            <element signature="e#14868#14872#0" expanded="true" />
+            <element signature="e#14907#14911#0" expanded="true" />
+            <element signature="e#14979#14983#0" expanded="true" />
+            <element signature="e#15091#15095#0" expanded="true" />
+            <element signature="e#16195#16201#0" expanded="true" />
+            <element signature="e#16397#16401#0" expanded="true" />
+            <element signature="e#16457#16461#0" expanded="true" />
+            <element signature="e#16474#16480#0" expanded="true" />
+            <element signature="e#16498#16504#0" expanded="true" />
+            <element signature="e#16543#16549#0" expanded="true" />
+            <element signature="e#16557#16563#0" expanded="true" />
+            <element signature="e#16565#16571#0" expanded="true" />
+            <element signature="e#16581#16587#0" expanded="true" />
+            <element signature="e#16588#16594#0" expanded="true" />
+            <element signature="e#16612#16618#0" expanded="true" />
+            <element signature="e#16619#16625#0" expanded="true" />
+            <element signature="e#16643#16649#0" expanded="true" />
+            <element signature="e#16650#16656#0" expanded="true" />
+            <element signature="e#16664#16670#0" expanded="true" />
+            <element signature="e#16671#16677#0" expanded="true" />
+            <element signature="e#16695#16701#0" expanded="true" />
+            <element signature="e#16702#16708#0" expanded="true" />
+            <element signature="e#16715#16720#0" expanded="true" />
+            <element signature="e#16726#16732#0" expanded="true" />
+            <element signature="e#17027#17033#0" expanded="true" />
+            <element signature="e#17080#17086#0" expanded="true" />
+            <element signature="e#17107#17113#0" expanded="true" />
+            <element signature="e#17160#17166#0" expanded="true" />
+            <element signature="e#17221#17227#0" expanded="true" />
+            <element signature="e#17231#17237#0" expanded="true" />
+            <element signature="e#17504#17508#0" expanded="true" />
+            <element signature="e#17545#17551#0" expanded="true" />
+            <element signature="e#17552#17556#0" expanded="true" />
+            <element signature="e#17556#17562#0" expanded="true" />
+            <element signature="e#17602#17608#0" expanded="true" />
+            <element signature="e#17627#17631#0" expanded="true" />
+            <element signature="e#17631#17637#0" expanded="true" />
+            <element signature="e#17641#17647#0" expanded="true" />
+            <element signature="e#17666#17670#0" expanded="true" />
+            <element signature="e#17670#17676#0" expanded="true" />
+            <element signature="e#17739#17743#0" expanded="true" />
+            <element signature="e#17856#17860#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/ios/test_function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="210" selection-start-line="210" selection-end-line="210" />
+          <folding>
+            <element signature="e#22#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/verify_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#22#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/ios/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="255">
+            <caret line="17" selection-start-line="17" selection-end-line="17" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/avc_ios.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2115">
+          <caret line="143" column="18" lean-forward="true" selection-start-line="143" selection-start-column="18" selection-end-line="143" selection-end-column="18" />
+          <folding>
+            <element signature="e#22#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testcase/ios/test_manual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding>
+            <element signature="e#22#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>

@@ -1,9 +1,10 @@
 #-*- coding:utf-8 -*-
 from PIL import Image
 from PIL import ImageChops
-import cv2 as cv
-import numpy as np
-import pytesseract
+from airtest.core.api import  *
+connect_device("ios:///http://127.0.0.1:8100")
+from poco.drivers.ios import iosPoco
+poco = iosPoco()
 def compare_images(path_one, path_two):
     """
     比较图片
@@ -24,3 +25,10 @@ def compare_images(path_one, path_two):
     except ValueError as e:
         return "{0}\n{1}".format(e, "图片大小和box对应的宽度不一致!")
 
+def network_quality():
+    if poco("网络质量未知").exists():
+        return "Unkown"
+    elif poco("网络质量良好").exists():
+        return "Good"
+    elif poco("网络质量差").exists():
+        return "Bad"

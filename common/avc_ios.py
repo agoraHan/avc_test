@@ -4,7 +4,7 @@ from airtest.core.api import *
 from PIL import Image
 import cv2 as cv
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd=r'/usr/local/Cellar/tesseract/4.1.0/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd=r'/usr/local/bin/tesseract'
 connect_device("ios:///http://127.0.0.1:8100")
 # connect_device("Android:///")
 from common import avc_constance as ac
@@ -135,7 +135,7 @@ class IOS_AVC(Common_AVC):
         '''
         poco("上传日志").click()
         wait(Template(r"resource/images/tpl1568205469989.png", record_pos=(0.003, -0.489), resolution=(750, 1334)))
-        print("Upload Success")
+        print("Upload Success,Time:%s"%time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))
 
     def goSettingInChannel(self):
         poco("Button").click()
@@ -164,5 +164,6 @@ class IOS_AVC(Common_AVC):
             text(pwd)
         else:
             raise TimeoutError("You are not the host!")
+
 
 

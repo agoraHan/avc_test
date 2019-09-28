@@ -2,8 +2,6 @@
 from airtest.core.api import  *
 from airtest.core.ios.ios import IOS
 import pytest
-import re
-import json
 from common import case_tag,verify_utils
 from common.avc_ios import IOS_AVC
 from common import avc_constance as ac
@@ -209,8 +207,6 @@ class TestIOS:
         avc.sendMessage(msg)
         avc.back()
         #todo:校验有多个 用户在会议中 远端是否可以接收到消息
-
-
 
 
 

@@ -10,6 +10,7 @@
   "testcase/ios/test_function.py::TestIOS::()::test_joinChannelWithDifferentReslotion[480P]": true,
   "testcase/ios/test_function.py::TestIOS::()::test_joinLeaveChannel": true,
   "testcase/ios/test_function.py::TestIOS::()::test_joinchannelWithIncorrectPassword": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_joinchannelWithiCorrectPassword": true,
   "testcase/ios/test_function.py::TestIOS::()::test_joinchannelWithiIncorrectPassword": true,
   "testcase/ios/test_function.py::TestIOS::()::test_password[,./!@#$%^&*()-+]": true,
   "testcase/ios/test_function.py::TestIOS::()::test_password[1234567890123456789]": true,
@@ -45,5 +46,6 @@
   "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[~!@#$%^&()_+]": true,
   "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[~!@#$%^&*())_+]": true,
   "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_02": true,
+  "testcase/ios/test_function.py::TestIOS::()::test_xx": true,
   "testcase/ios/test_function.py::TestIOS::test_uploadLog[123]": true
 }
