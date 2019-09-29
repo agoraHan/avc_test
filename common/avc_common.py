@@ -4,6 +4,10 @@ from PIL import Image
 import cv2 as cv
 import pytesseract
 import re
+import requests
+import pandas
+import csv
+
 pytesseract.pytesseract.tesseract_cmd=r'/usr/local/Cellar/tesseract/4.1.0/bin/tesseract'
 connect_device("ios:///http://127.0.0.1:8100")
 # connect_device("Android:///")
@@ -67,3 +71,32 @@ class Common_AVC:
         text = self.getWordsInImage(file_path).split()[1]
         number  = re.findall("\d+",text)[0]
         return int(number)
+
+    #获取管理后台当前第一页的用户反馈
+    def get_feedback_csv(self,post_url, data, get_url,feedbackfilepath):
+        '''
+        :param post_url: Beckon管理后台的登陆URL
+        :param data: 用户名和密码 格式{"username":username,"password":password}
+        :param get_url: 用户反馈页面的URL
+        :param feedbackfilepath: 要保存的文件路径
+        :return:
+        '''
+        s = requests.session()
+        s.post(post_url, data)
+        res1 = s.get(get_url)
+        tb = pandas.read_html(res1.text)[0]
+        tb.to_csv(feedbackfilepath, header=1, index=True)
+
+    #获取第一条用户反馈
+    def get_firtfeedback_info(self,feedbackfilepath):
+        with open(feedbackfilepath, 'r') as csvfile:
+            r = csv.reader(csvfile)
+            next(r, None)
+            rows = [row for row in r]
+            info = rows[0]
+            log_info = "upload time:%s"%info[1],"LogName:%s"%info[3]
+            return log_info
+
+
+
+

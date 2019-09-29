@@ -17,6 +17,9 @@ class TestIOS:
         self.password = "avctest"
         self.packageName = ac.Package_Name.ios_packageName
         self.screeshot_path = "resource/screenshot/"
+        self.feedbackpath = "resource/feedback.csv"
+        self.postData = {"userName": "sdk", "password": "__sdk_8estv0ip!"}
+
     def tearDown(self):
         pass
 
@@ -33,5 +36,17 @@ class TestIOS:
         pytest_utils.execute_manual_step("设置下行网络，丢包60%")
         assert verify_utils.network_quality() == "Bad"
 
+    '''日志上报'''
+    @pytest.mark.tags(case_tag.iOS, case_tag.HIGH, case_tag.MANUAL, case_tag.FUNCTIONALITY)
+    def test_uploadLog(self):
+        avc = self.avc
+        avc.setCurrentDevice(0)
+        avc.startAVC(self.packageName)
+        avc.goMine()
+        avc.uploadLog()
+        avc.get_feedback_csv(post_url=ac.URL.login,data=self.postData,get_url=ac.URL.feedback,feedbackfilepath=self.feedbackpath)
+        info = avc.get_firtfeedback_info(feedbackfilepath=self.feedbackpath)
+        print(info)
+        pytest_utils.execute_manual_step('日志上传信息完整')
 
 

@@ -3,6 +3,7 @@ from .avc_common import Common_AVC
 from airtest.core.api import *
 from PIL import Image
 import cv2 as cv
+from datetime import datetime
 import pytesseract
 pytesseract.pytesseract.tesseract_cmd=r'/usr/local/bin/tesseract'
 connect_device("ios:///http://127.0.0.1:8100")
@@ -112,7 +113,7 @@ class IOS_AVC(Common_AVC):
         if poco("audio off").exists():
             print("audio already muted")
         else:
-            poco("audio join").exists()
+            poco("audio join").click()
 
     def preUnmuteAudio(self):
         if poco("audio join").exists():
@@ -128,14 +129,6 @@ class IOS_AVC(Common_AVC):
     def goToParticipantList(self):
         poco("participants").click()
 
-
-    def uploadLog(self):
-        '''
-            网络不好，上传时间会变长，可能会失败
-        '''
-        poco("上传日志").click()
-        wait(Template(r"resource/images/tpl1568205469989.png", record_pos=(0.003, -0.489), resolution=(750, 1334)))
-        print("Upload Success,Time:%s"%time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))
 
     def goSettingInChannel(self):
         poco("Button").click()
@@ -165,5 +158,12 @@ class IOS_AVC(Common_AVC):
         else:
             raise TimeoutError("You are not the host!")
 
-
+    def uploadLog(self):
+        '''
+            网络不好，上传时间会变长，可能会失败
+        '''
+        poco("上传日志").click()
+        time = str(datetime.utcnow())
+        wait(Template(r"resource/images/tpl1568205469989.png", record_pos=(0.003, -0.489), resolution=(750, 1334)))
+        print("日志上传时间:%s" % time)
 
