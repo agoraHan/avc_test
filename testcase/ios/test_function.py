@@ -16,9 +16,9 @@ class TestIOS:
         self.packageName = ac.Package_Name.ios_packageName
         self.screeshot_path = "resource/screenshot/"
 
-    def tearDown(self):
+    def teardown(self):
+        # self.avc.stopAVC(self.packageName)
         pass
-
     '''
     获取版本号
     '''
@@ -124,6 +124,8 @@ class TestIOS:
     '''
     nickname长度 > 18
     '''
+
+    @pytest.mark.parametrize("nickname",["12345678901234567890"])
     @pytest.mark.tags(case_tag.iOS, case_tag.MEDIUM, case_tag.AUTOMATED, case_tag.FUNCTIONALITY)
     def test_updateNickname_02(self, nickname):
         avc = self.avc
@@ -133,7 +135,6 @@ class TestIOS:
         avc.updateNickname(nickname)
         path1 = self.screeshot_path + "test_updateNickname_02a.jpg"
         path2 = self.screeshot_path + "test_updateNickname_02b.jpg"
-        text("1234567890123456789")
         avc.getScreenshot(path1)
         width, height = avc.getImageSize(path1)
         avc.getCustomizeImage(path1, path2, 1 / 2 * width, 1 / 6 * height, width, 1.5 / 6 * height)
@@ -171,7 +172,7 @@ class TestIOS:
         avc = self.avc
         avc.setCurrentDevice(0)
         avc.startAVC(self.packageName)
-        avc.joinChannel(self.channel_name,"error")
+        avc.joinChannel(roomName=self.channel_name,password="error")
         assert poco("Room join failed, incorrect password, ").exists()
 
 
@@ -189,7 +190,7 @@ class TestIOS:
         sleep(2)
         avc.leaveChannel()
 
-    '''进入频道前，设置本地的视频mute,进入频道后本地的视频也是mute状态'''
+    '''进入会议前，设置本地的视频mute,进入会议后本地的视频也是mute状态'''
     @pytest.mark.tags(case_tag.iOS, case_tag.HIGH, case_tag.AUTOMATED, case_tag.FUNCTIONALITY)
     def test_muteVideoBeforeJoinchannel(self):
         avc = self.avc
@@ -201,7 +202,7 @@ class TestIOS:
         avc.joinChannel(self.channel_name, self.password)
         assert poco("video off").exists()
 
-    '''进入频道前，设置本地的音频mute,进入频道后本地的音频也是mute状态'''
+    '''进入会议前，设置本地的音频mute,进入会议后本地的音频也是mute状态'''
     @pytest.mark.tags(case_tag.iOS, case_tag.HIGH, case_tag.AUTOMATED, case_tag.FUNCTIONALITY)
     def test_muteAudioBeforeJoinchannel(self):
         avc = self.avc
@@ -212,6 +213,29 @@ class TestIOS:
         avc.back()
         avc.joinChannel(self.channel_name, self.password)
         assert poco("audio off").exists()
+
+    '''会议中设置本地的视频为mute,退出会议后，进入到个人设置界面显示本地的视频状态也是mute'''
+    def test_muteVideoInchannel(self):
+        avc = self.avc
+        avc.setCurrentDevice(0)
+        avc.startAVC(self.packageName)
+        avc.joinChannel(self.channel_name,self.password)
+        avc.muteVideoInchannel()
+        avc.leaveChannel()
+        avc.goMine()
+        assert poco("video off").exists()
+
+    '''会议中设置本地的音频mute，退出会议后，进入到个人设置界面显示本地的视频状态为mute'''
+    def test_muteAudioInchannel(self):
+        avc = self.avc
+        avc.setCurrentDevice(0)
+        avc.startAVC(self.packageName)
+        avc.joinChannel(self.channel_name,self.password)
+        avc.muteAudioInchannel()
+        avc.leaveChannel()
+        avc.goMine()
+        assert poco("audio off").exists()
+
 
     '''申请主持人，显示主持人图标'''
     def test_hostIcon(self):
@@ -252,5 +276,16 @@ class TestIOS:
         avc.back()
         #todo:校验有多个 用户在会议中 远端是否可以接收到消息
 
-
+    '''消息记录的消息长按可以复制'''
+    @pytest.mark.tags(case_tag.iOS, case_tag.MEDIUM, case_tag.AUTOMATED, case_tag.FUNCTIONALITY)
+    def test_copyHistroyMessageAndSend(self):
+        avc = self.avc
+        avc.setCurrentDevice(0)
+        avc.startAVC(self.packageName)
+        avc.joinChannel(self.channel_name,self.password)
+        msg = "hello"
+        avc.sendMessage(msg)
+        avc.copyHistroyMessageAndSend()
+        avc.back()
+        avc.leaveChannel()
 

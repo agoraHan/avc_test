@@ -20,16 +20,19 @@
   "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[KLZXCVVBNM]",
   "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[l;'zxv c bnm,./]",
   "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_01[~!@#$%^&()_+]",
-  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_02",
+  "testcase/ios/test_function.py::TestIOS::()::test_updateNickname_02[12345678901234567890]",
   "testcase/ios/test_function.py::TestIOS::()::test_updateAvatar",
   "testcase/ios/test_function.py::TestIOS::()::test_joinchannelWithiCorrectPassword",
   "testcase/ios/test_function.py::TestIOS::()::test_joinchannelWithIncorrectPassword",
   "testcase/ios/test_function.py::TestIOS::()::test_joinChannelWithDifferentReslotion[240P]",
   "testcase/ios/test_function.py::TestIOS::()::test_joinChannelWithDifferentReslotion[360P]",
   "testcase/ios/test_function.py::TestIOS::()::test_joinChannelWithDifferentReslotion[480P]",
-  "testcase/ios/test_function.py::TestIOS::()::test_hostIcon",
   "testcase/ios/test_function.py::TestIOS::()::test_muteVideoBeforeJoinchannel",
   "testcase/ios/test_function.py::TestIOS::()::test_muteAudioBeforeJoinchannel",
+  "testcase/ios/test_function.py::TestIOS::()::test_muteVideoInchannel",
+  "testcase/ios/test_function.py::TestIOS::()::test_muteAudioInchannel",
+  "testcase/ios/test_function.py::TestIOS::()::test_hostIcon",
   "testcase/ios/test_function.py::TestIOS::()::test_checkParticipants",
-  "testcase/ios/test_function.py::TestIOS::()::test_sendMsg"
+  "testcase/ios/test_function.py::TestIOS::()::test_sendMsg",
+  "testcase/ios/test_function.py::TestIOS::()::test_copyHistroyMessageAndSend"
 ]

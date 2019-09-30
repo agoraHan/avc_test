@@ -126,6 +126,16 @@ class IOS_AVC(Common_AVC):
         poco("TextField").click()
         text(msg)
 
+    def copyHistroyMessageAndSend(self):
+        touch([100,100])
+        poco("TextView").long_click(duration=2)
+        poco("拷贝").click()
+        for i in range(2):
+            poco("TextField").click()
+        poco("粘贴").click()
+        poco("Send").click()
+
+
     def goToParticipantList(self):
         poco("participants").click()
 

@@ -27,6 +27,9 @@ class Common_AVC:
         # wait(Template(r"resource/images/tpl1568100069708.png", record_pos=(0.003, -0.54), resolution=(750, 1334)),5)
         # sleep(self.interval)
 
+    def stopAVC(self,packageName):
+        stop_app(packageName)
+
     def getScreenSize(self):
         width,height = poco.get_screen_size()
         return width,height
