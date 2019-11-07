@@ -8,7 +8,7 @@ import requests
 import pandas
 import csv
 
-pytesseract.pytesseract.tesseract_cmd=r'/usr/local/Cellar/tesseract/4.1.0/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd=r'/usr/local/bin/tesseract'
 connect_device("ios:///http://127.0.0.1:8100")
 # connect_device("Android:///")
 from poco.drivers.ios import iosPoco
